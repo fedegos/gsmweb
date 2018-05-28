@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+
+    <title>Aplicaciones GSM</title>
+    <meta name="description" content="Aplicaciones para proyectos de GSM">
+    <meta name="author" content="GSM">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+    <script type=text/javascript src="{{url_for('static', filename='js/lib/jquery-3.3.1.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='js/lib/bootstrap.bundle.min.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/bootstrap.min.css') }}"/>
+
+
+</head>
+
+<body>
+{% for message in get_flashed_messages() %}
+<div class="flash">{{ message }}</div>
+{% endfor %}
+
+{% block content %}{% endblock %}
+</body>
+</html>
